@@ -24,3 +24,11 @@ function mynew (target, ...args) {
     ? result
     : obj
 }
+
+function myNew2(target,...args){
+  const obj = {}
+  obj.__proto__= target.prototype
+  let res = target.call(obj,...args)
+  return typeof res==='object'?res:obj
+}
+
